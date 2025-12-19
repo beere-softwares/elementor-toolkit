@@ -1,0 +1,33 @@
+.video-background-widget {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-background-widget__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.video-background-widget__content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.video-background-widget__title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.video-background-widget__description {
+    margin-bottom: 20px;
+}
