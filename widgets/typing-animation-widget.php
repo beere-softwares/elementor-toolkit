@@ -61,7 +61,7 @@ class Elementor_Typing_Animation_Widget extends \Elementor\Widget_Base {
      * @return string Widget help URL.
      */
     public function get_custom_help_url() {
-        return 'https://example.com/docs/typing-animation-widget';
+        return 'https://github.com/beere-softwares/elementor-toolkit';
     }
 
     /**

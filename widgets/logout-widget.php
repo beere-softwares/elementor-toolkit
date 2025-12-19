@@ -61,7 +61,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
      * @return string Widget help URL.
      */
     public function get_custom_help_url() {
-        return 'https://example.com/docs/logout-widget';
+        return 'https://github.com/beere-softwares/elementor-toolkit';
     }
 
     /**

@@ -1,6 +1,6 @@
 === Elementor Toolkit ===
 Contributors: beeresoftwares
-Donate link: https://beeresoftwares.com/
+Donate link: https://github.com/beere-softwares/elementor-toolkit
 Tags: elementor, widget, logout, typing, video, background
 Requires at least: 5.0
 Tested up to: 6.4

@@ -61,7 +61,7 @@ class Elementor_Video_Background_Widget extends \Elementor\Widget_Base {
      * @return string Widget help URL.
      */
     public function get_custom_help_url() {
-        return 'https://example.com/docs/video-background-widget';
+        return 'https://github.com/beere-softwares/elementor-toolkit';
     }
 
     /**
@@ -147,7 +147,7 @@ class Elementor_Video_Background_Widget extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__( 'Button Link', 'elementor-toolkit' ),
                 'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'elementor-toolkit' ),
+                'placeholder' => esc_html__( 'https://beeresoftwares.com', 'elementor-toolkit' ),
                 'show_external' => true,
                 'default' => [
                     'url' => '',
