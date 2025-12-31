@@ -1,9 +1,9 @@
-=== Elementor Toolkit ===
+=== Toolkit for Elementor by Beere ===
 Contributors: beeresoftwares
-Donate link: https://github.com/beere-softwares/elementor-toolkit
-Tags: elementor, widget, logout, typing, video, background
+Donate link: https://github.com/beere-softwares/toolkit-for-elementor-by-beere
+Tags: elementor, logout, typing, video, background
 Requires at least: 5.0
-Tested up to: 6.4
+Tested up to: 6.9
 Stable tag: 1.3.0
 Requires PHP: 7.0
 License: GPLv2 or later
@@ -21,7 +21,7 @@ This plugin provides a set of custom widgets for the Elementor page builder. The
 
 == Installation ==
 
-1.  Upload the `elementor-toolkit` folder to the `/wp-content/plugins/` directory.
+1.  Upload the `toolkit-for-elementor-by-beere` folder to the `/wp-content/plugins/` directory.
 2.  Activate the plugin through the 'Plugins' menu in WordPress.
 3.  The widgets will be available in the Elementor editor.
 
@@ -33,7 +33,7 @@ Yes, this plugin requires the Elementor page builder to be installed and activat
 
 == Screenshots ==
 
-1. The Elementor Toolkit widgets.
+1. The Toolkit for Elementor by Beere widgets.
 
 == Changelog ==
 

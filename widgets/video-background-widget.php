@@ -35,7 +35,7 @@ class Elementor_Video_Background_Widget extends \Elementor\Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return esc_html__( 'Video Background', 'elementor-toolkit' );
+        return esc_html__( 'Video Background', 'toolkit-for-elementor-by-beere' );
     }
 
     /**
@@ -61,7 +61,7 @@ class Elementor_Video_Background_Widget extends \Elementor\Widget_Base {
      * @return string Widget help URL.
      */
     public function get_custom_help_url() {
-        return 'https://github.com/beere-softwares/elementor-toolkit';
+        return 'https://github.com/beere-softwares/toolkit-for-elementor-by-beere';
     }
 
     /**
@@ -74,7 +74,7 @@ class Elementor_Video_Background_Widget extends \Elementor\Widget_Base {
      * @return array Widget categories.
      */
     public function get_categories() {
-        return [ 'elementor-toolkit' ];
+        return [ 'toolkit-for-elementor-by-beere' ];
     }
 
     /**
@@ -102,14 +102,14 @@ class Elementor_Video_Background_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__( 'Content', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Content', 'toolkit-for-elementor-by-beere' ),
             ]
         );
 
         $this->add_control(
             'video_link',
             [
-                'label' => esc_html__( 'Video Link', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Video Link', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'media_type' => 'video',
             ]
@@ -118,36 +118,36 @@ class Elementor_Video_Background_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'title',
             [
-                'label' => esc_html__( 'Title', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Title', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Hello, World!', 'elementor-toolkit' ),
+                'default' => esc_html__( 'Hello, World!', 'toolkit-for-elementor-by-beere' ),
             ]
         );
 
         $this->add_control(
             'description',
             [
-                'label' => esc_html__( 'Description', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Description', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => esc_html__( 'This is a video background widget.', 'elementor-toolkit' ),
+                'default' => esc_html__( 'This is a video background widget.', 'toolkit-for-elementor-by-beere' ),
             ]
         );
 
         $this->add_control(
             'button_text',
             [
-                'label' => esc_html__( 'Button Text', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Button Text', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Click Me', 'elementor-toolkit' ),
+                'default' => esc_html__( 'Click Me', 'toolkit-for-elementor-by-beere' ),
             ]
         );
 
         $this->add_control(
             'button_link',
             [
-                'label' => esc_html__( 'Button Link', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Button Link', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://beeresoftwares.com', 'elementor-toolkit' ),
+                'placeholder' => esc_html__( 'https://beeresoftwares.com', 'toolkit-for-elementor-by-beere' ),
                 'show_external' => true,
                 'default' => [
                     'url' => '',

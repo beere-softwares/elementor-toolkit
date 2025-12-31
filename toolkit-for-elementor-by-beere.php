@@ -1,34 +1,35 @@
 <?php
 /**
- * Plugin Name: Elementor Toolkit
+ * Plugin Name: Toolkit for Elementor by Beere
  * Description: Custom Elementor widgets for logout and other features.
- * Plugin URI:  https://github.com/beere-softwares/elementor-toolkit
+ * Plugin URI:  https://github.com/beere-softwares/toolkit-for-elementor-by-beere
  * Version:     1.3.0
  * Author:      Beere Softwares
  * Author URI:  https://github.com/beere-softwares
- * Text Domain: elementor-toolkit
+ * Text Domain: toolkit-for-elementor-by-beere
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * Elementor tested up to: 3.21.0
  * Elementor Pro tested up to: 3.21.0
+ * WordPress tested up to: 6.9
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-define( 'ELEMENTOR_TOOLKIT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'ELEMENTOR_TOOLKIT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'TOOLKIT_FOR_ELEMENTOR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * Main Elementor Toolkit Class
+ * Main Toolkit for Elementor Class
  *
  * The main class that initiates and runs the plugin.
  *
  * @since 1.0.0
  */
-final class Elementor_Toolkit_Plugin {
+final class Toolkit_For_Elementor_Plugin {
 
     /**
      * Plugin Version
@@ -52,7 +53,7 @@ final class Elementor_Toolkit_Plugin {
      * @since 1.0.0
      * @access private
      * @static
-     * @var \Elementor_Toolkit_Plugin The single instance of the class.
+     * @var \Toolkit_For_Elementor_Plugin The single instance of the class.
      */
     private static $_instance = null;
 
@@ -64,7 +65,7 @@ final class Elementor_Toolkit_Plugin {
      * @since 1.0.0
      * @access public
      * @static
-     * @return \Elementor_Toolkit_Plugin An instance of the class.
+     * @return \Toolkit_For_Elementor_Plugin An instance of the class.
      */
     public static function instance() {
 
@@ -97,7 +98,7 @@ final class Elementor_Toolkit_Plugin {
      */
     public function i18n() {
 
-        load_plugin_textdomain( 'elementor-toolkit' );
+        // WordPress.org automatically loads translations since WP 4.6.
 
     }
 
@@ -177,16 +178,14 @@ final class Elementor_Toolkit_Plugin {
      */
     public function admin_notice_missing_main_plugin() {
 
-        if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
-
         $message = sprintf(
             /* translators: 1: Plugin name 2: Elementor */
-            esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'elementor-toolkit' ),
-            '<strong>' . esc_html__( 'Elementor Toolkit', 'elementor-toolkit' ) . '</strong>',
-            '<strong>' . esc_html__( 'Elementor', 'elementor-toolkit' ) . '</strong>'
+            esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'toolkit-for-elementor-by-beere' ),
+            '<strong>' . esc_html__( 'Toolkit for Elementor by Beere', 'toolkit-for-elementor-by-beere' ) . '</strong>',
+            '<strong>' . esc_html__( 'Elementor', 'toolkit-for-elementor-by-beere' ) . '</strong>'
         );
 
-        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
 
     }
 
@@ -200,17 +199,15 @@ final class Elementor_Toolkit_Plugin {
      */
     public function admin_notice_minimum_elementor_version() {
 
-        if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
-
         $message = sprintf(
             /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-toolkit' ),
-            '<strong>' . esc_html__( 'Elementor Toolkit', 'elementor-toolkit' ) . '</strong>',
-            '<strong>' . esc_html__( 'Elementor', 'elementor-toolkit' ) . '</strong>',
+            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'toolkit-for-elementor-by-beere' ),
+            '<strong>' . esc_html__( 'Toolkit for Elementor by Beere', 'toolkit-for-elementor-by-beere' ) . '</strong>',
+            '<strong>' . esc_html__( 'Elementor', 'toolkit-for-elementor-by-beere' ) . '</strong>',
             self::MINIMUM_ELEMENTOR_VERSION
         );
 
-        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+        printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
 
     }
 
@@ -221,13 +218,13 @@ final class Elementor_Toolkit_Plugin {
      * @access public
      */
     public function register_widgets( $widgets_manager ) {
-        require_once( ELEMENTOR_TOOLKIT_PLUGIN_PATH . 'widgets/logout-widget.php' );
+        require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/logout-widget.php' );
         $widgets_manager->register( new \Elementor_Logout_Widget() );
 
-        require_once( ELEMENTOR_TOOLKIT_PLUGIN_PATH . 'widgets/typing-animation-widget.php' );
+        require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/typing-animation-widget.php' );
         $widgets_manager->register( new \Elementor_Typing_Animation_Widget() );
 
-        require_once( ELEMENTOR_TOOLKIT_PLUGIN_PATH . 'widgets/video-background-widget.php' );
+        require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/video-background-widget.php' );
         $widgets_manager->register( new \Elementor_Video_Background_Widget() );
     }
 
@@ -239,9 +236,9 @@ final class Elementor_Toolkit_Plugin {
      */
     public function add_elementor_widget_categories( $elements_manager ) {
         $elements_manager->add_category(
-            'elementor-toolkit',
+            'toolkit-for-elementor-by-beere',
             [
-                'title' => esc_html__( 'Elementor Toolkit', 'elementor-toolkit' ),
+                'title' => esc_html__( 'Toolkit for Elementor by Beere', 'toolkit-for-elementor-by-beere' ),
                 'icon' => 'fa fa-plug',
             ]
         );
@@ -254,7 +251,7 @@ final class Elementor_Toolkit_Plugin {
      * @access public
      */
     public function widget_styles() {
-        wp_enqueue_style( 'elementor-toolkit', ELEMENTOR_TOOLKIT_PLUGIN_URL . 'css/style.css', [], self::VERSION );
+        wp_enqueue_style( 'toolkit-for-elementor-by-beere', TOOLKIT_FOR_ELEMENTOR_PLUGIN_URL . 'css/style.css', [], self::VERSION );
     }
 
     /**
@@ -264,10 +261,10 @@ final class Elementor_Toolkit_Plugin {
      * @access public
      */
     public function widget_scripts() {
-        wp_register_script( 'elementor-toolkit', ELEMENTOR_TOOLKIT_PLUGIN_URL . 'js/typing-animation.js', [ 'jquery' ], self::VERSION, true );
+        wp_register_script( 'toolkit-for-elementor-by-beere', TOOLKIT_FOR_ELEMENTOR_PLUGIN_URL . 'js/typing-animation.js', [ 'jquery' ], self::VERSION, true );
     }
 
 
 }
 
-Elementor_Toolkit_Plugin::instance();
+Toolkit_For_Elementor_Plugin::instance();

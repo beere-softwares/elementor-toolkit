@@ -2,7 +2,7 @@
 /**
  * Fired when the plugin is uninstalled.
  *
- * @package   Elementor_Toolkit
+ * @package   Toolkit_For_Elementor_By_Beere
  * @author    Beere Softwares <hello@beeresoftwares.com>
  * @license   GPL-2.0+
  * @link      https://beeresoftwares.com/

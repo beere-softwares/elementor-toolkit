@@ -35,7 +35,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return esc_html__( 'Logout', 'elementor-toolkit' );
+        return esc_html__( 'Logout', 'toolkit-for-elementor-by-beere' );
     }
 
     /**
@@ -61,7 +61,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
      * @return string Widget help URL.
      */
     public function get_custom_help_url() {
-        return 'https://github.com/beere-softwares/elementor-toolkit';
+        return 'https://github.com/beere-softwares/toolkit-for-elementor-by-beere';
     }
 
     /**
@@ -74,7 +74,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
      * @return array Widget categories.
      */
     public function get_categories() {
-        return [ 'elementor-toolkit' ];
+        return [ 'toolkit-for-elementor-by-beere' ];
     }
 
     /**
@@ -103,7 +103,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'Content', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Content', 'toolkit-for-elementor-by-beere' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -111,19 +111,19 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'text',
             [
-                'label' => esc_html__( 'Text', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Text', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Logout', 'elementor-toolkit' ),
-                'placeholder' => esc_html__( 'Logout', 'elementor-toolkit' ),
+                'default' => esc_html__( 'Logout', 'toolkit-for-elementor-by-beere' ),
+                'placeholder' => esc_html__( 'Logout', 'toolkit-for-elementor-by-beere' ),
             ]
         );
 
         $this->add_control(
             'redirect_url',
             [
-                'label' => esc_html__( 'Redirect URL', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Redirect URL', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'elementor-toolkit' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'toolkit-for-elementor-by-beere' ),
                 'show_external' => true,
                 'default' => [
                     'url' => '',
@@ -139,23 +139,23 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'align',
             [
-                'label' => esc_html__( 'Alignment', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Alignment', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__( 'Left', 'elementor-toolkit' ),
+                        'title' => esc_html__( 'Left', 'toolkit-for-elementor-by-beere' ),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__( 'Center', 'elementor-toolkit' ),
+                        'title' => esc_html__( 'Center', 'toolkit-for-elementor-by-beere' ),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__( 'Right', 'elementor-toolkit' ),
+                        'title' => esc_html__( 'Right', 'toolkit-for-elementor-by-beere' ),
                         'icon' => 'eicon-text-align-right',
                     ],
                     'justify' => [
-                        'title' => esc_html__( 'Justified', 'elementor-toolkit' ),
+                        'title' => esc_html__( 'Justified', 'toolkit-for-elementor-by-beere' ),
                         'icon' => 'eicon-text-align-justify',
                     ],
                 ],
@@ -171,7 +171,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'style_section',
             [
-                'label' => esc_html__( 'Style', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Style', 'toolkit-for-elementor-by-beere' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -197,14 +197,14 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->start_controls_tab(
             'tab_button_normal',
             [
-                'label' => esc_html__( 'Normal', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Normal', 'toolkit-for-elementor-by-beere' ),
             ]
         );
 
         $this->add_control(
             'button_text_color',
             [
-                'label' => esc_html__( 'Text Color', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Text Color', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -216,7 +216,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'background_color',
             [
-                'label' => esc_html__( 'Background Color', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Background Color', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .elementor-button' => 'background-color: {{VALUE}};',
@@ -229,14 +229,14 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->start_controls_tab(
             'tab_button_hover',
             [
-                'label' => esc_html__( 'Hover', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Hover', 'toolkit-for-elementor-by-beere' ),
             ]
         );
 
         $this->add_control(
             'hover_color',
             [
-                'label' => esc_html__( 'Text Color', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Text Color', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .elementor-button:hover' => 'color: {{VALUE}};',
@@ -247,7 +247,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'button_background_hover_color',
             [
-                'label' => esc_html__( 'Background Color', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Background Color', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .elementor-button:hover' => 'background-color: {{VALUE}};',
@@ -258,7 +258,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'button_hover_border_color',
             [
-                'label' => esc_html__( 'Border Color', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Border Color', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .elementor-button:hover' => 'border-color: {{VALUE}};',
@@ -269,7 +269,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'hover_animation',
             [
-                'label' => esc_html__( 'Hover Animation', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Hover Animation', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::HOVER_ANIMATION,
             ]
         );
@@ -290,7 +290,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Border Radius', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -310,7 +310,7 @@ class Elementor_Logout_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'text_padding',
             [
-                'label' => esc_html__( 'Padding', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Padding', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [

@@ -1,4 +1,4 @@
-# Elementor Toolkit
+# Toolkit for Elementor by Beere
 
 A collection of custom Elementor widgets.
 
@@ -12,7 +12,7 @@ This plugin provides a set of custom widgets for the Elementor page builder. The
 
 ## Installation
 
-1.  Upload the `elementor-toolkit` folder to the `/wp-content/plugins/` directory.
+1.  Upload the `toolkit-for-elementor-by-beere` folder to the `/wp-content/plugins/` directory.
 2.  Activate the plugin through the 'Plugins' menu in WordPress.
 3.  The widgets will be available in the Elementor editor.
 

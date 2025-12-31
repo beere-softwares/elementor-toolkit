@@ -35,7 +35,7 @@ class Elementor_Typing_Animation_Widget extends \Elementor\Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return esc_html__( 'Typing Animation', 'elementor-toolkit' );
+        return esc_html__( 'Typing Animation', 'toolkit-for-elementor-by-beere' );
     }
 
     /**
@@ -61,7 +61,7 @@ class Elementor_Typing_Animation_Widget extends \Elementor\Widget_Base {
      * @return string Widget help URL.
      */
     public function get_custom_help_url() {
-        return 'https://github.com/beere-softwares/elementor-toolkit';
+        return 'https://github.com/beere-softwares/toolkit-for-elementor-by-beere';
     }
 
     /**
@@ -74,7 +74,7 @@ class Elementor_Typing_Animation_Widget extends \Elementor\Widget_Base {
      * @return array Widget categories.
      */
     public function get_categories() {
-        return [ 'elementor-toolkit' ];
+        return [ 'toolkit-for-elementor-by-beere' ];
     }
 
     /**
@@ -100,7 +100,7 @@ class Elementor_Typing_Animation_Widget extends \Elementor\Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'elementor-toolkit' ];
+		return [ 'toolkit-for-elementor-by-beere' ];
 	}
 
     /**
@@ -115,7 +115,7 @@ class Elementor_Typing_Animation_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'Content', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Content', 'toolkit-for-elementor-by-beere' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -123,16 +123,16 @@ class Elementor_Typing_Animation_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'text_to_type',
             [
-                'label' => esc_html__( 'Text to Type', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Text to Type', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => esc_html__( 'Hello, World!', 'elementor-toolkit' ),
+                'default' => esc_html__( 'Hello, World!', 'toolkit-for-elementor-by-beere' ),
             ]
         );
 
         $this->add_control(
             'typing_speed',
             [
-                'label' => esc_html__( 'Typing Speed (ms)', 'elementor-toolkit' ),
+                'label' => esc_html__( 'Typing Speed (ms)', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'default' => 100,
             ]
