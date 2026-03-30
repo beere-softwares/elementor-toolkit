@@ -3,7 +3,7 @@
  * Plugin Name: Toolkit for Elementor by Beere
  * Description: Custom Elementor widgets for logout and other features.
  * Plugin URI:  https://github.com/beere-softwares/toolkit-for-elementor-by-beere
- * Version:     1.3.0
+ * Version:     1.4.0
  * Author:      Beere Softwares
  * Author URI:  https://github.com/beere-softwares
  * Text Domain: toolkit-for-elementor-by-beere
@@ -37,7 +37,7 @@ final class Toolkit_For_Elementor_Plugin {
      * @since 1.0.0
      * @var string The plugin version.
      */
-    const VERSION = '1.3.0';
+    const VERSION = '1.4.0';
 
     /**
      * Minimum Elementor Version
@@ -226,6 +226,9 @@ final class Toolkit_For_Elementor_Plugin {
 
         require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/video-background-widget.php' );
         $widgets_manager->register( new \Elementor_Video_Background_Widget() );
+
+        require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/custom-checkout-widget.php' );
+        $widgets_manager->register( new \Elementor_Custom_Checkout_Widget() );
     }
 
     /**
