@@ -1,7 +1,7 @@
 === Toolkit for Elementor by Beere ===
 Contributors: beeresoftwares
 Donate link: https://github.com/beere-softwares/toolkit-for-elementor-by-beere
-Tags: elementor, logout, typing, video, background, woocommerce, checkout, rearrange, quantity
+Tags: elementor, woocommerce, checkout, rearrange, quantity
 Requires at least: 5.0
 Tested up to: 6.9
 Stable tag: 1.4.0

@@ -243,7 +243,7 @@ class Elementor_Custom_Checkout_Widget extends \Elementor\Widget_Base {
                                 break;
                             case 'order_review':
                                 ?>
-                                <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
+                                <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'toolkit-for-elementor-by-beere' ); ?></h3>
                                 <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
                                 <div id="order_review" class="woocommerce-checkout-review-order">
                                     <?php do_action( 'woocommerce_checkout_order_review' ); ?>
