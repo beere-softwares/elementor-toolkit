@@ -255,6 +255,7 @@ final class Toolkit_For_Elementor_Plugin {
      */
     public function widget_styles() {
         wp_enqueue_style( 'toolkit-for-elementor-by-beere', TOOLKIT_FOR_ELEMENTOR_PLUGIN_URL . 'css/style.css', [], self::VERSION );
+        wp_register_style( 'widget-woocommerce-checkout-page', TOOLKIT_FOR_ELEMENTOR_PLUGIN_URL . 'css/widget-woocommerce-checkout-page.min.css', [], self::VERSION );
     }
 
     /**

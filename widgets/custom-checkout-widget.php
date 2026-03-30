@@ -29,12 +29,30 @@ class Toolkit_Beere_Custom_Checkout_Widget extends \Elementor\Widget_Base {
         return [ 'woocommerce', 'checkout', 'rearrange', 'quantity' ];
     }
 
+    public function get_style_depends() {
+        return [ 'widget-woocommerce-checkout-page' ];
+    }
+
     protected function register_controls() {
 
         $this->start_controls_section(
             'section_content',
             [
                 'label' => esc_html__( 'General Settings', 'toolkit-for-elementor-by-beere' ),
+            ]
+        );
+
+        $this->add_control(
+            'checkout_layout',
+            [
+                'label' => esc_html__( 'Layout', 'toolkit-for-elementor-by-beere' ),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'two-column' => esc_html__( 'Two columns', 'toolkit-for-elementor-by-beere' ),
+                    'one-column' => esc_html__( 'One column', 'toolkit-for-elementor-by-beere' ),
+                ],
+                'default' => 'two-column',
+                'prefix_class' => 'e-checkout-layout-',
             ]
         );
 
@@ -82,22 +100,107 @@ class Toolkit_Beere_Custom_Checkout_Widget extends \Elementor\Widget_Base {
 
         $this->end_controls_section();
 
-        // Style section for Quantity Buttons
+        // Style Section: Sections
         $this->start_controls_section(
-            'section_quantity_style',
+            'section_checkout_style_sections',
             [
-                'label' => esc_html__( 'Quantity Styling', 'toolkit-for-elementor-by-beere' ),
-                'condition' => [
-                    'enable_quantity' => 'yes',
-                ],
+                'label' => esc_html__( 'Sections', 'toolkit-for-elementor-by-beere' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
-            'qty_input_heading',
+            'sections_background_color',
             [
-                'label' => esc_html__( 'Input Styling', 'toolkit-for-elementor-by-beere' ),
+                'label' => esc_html__( 'Background Color', 'toolkit-for-elementor-by-beere' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}}' => '--sections-background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'section_normal_box_shadow',
+                'selector' => $this->get_main_woocommerce_sections_selectors(),
+            ]
+        );
+
+        $this->add_control(
+            'sections_border_radius',
+            [
+                'label' => esc_html__( 'Border Radius', 'toolkit-for-elementor-by-beere' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                'selectors' => [
+                    '{{WRAPPER}}' => '--sections-border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'sections_padding',
+            [
+                'label' => esc_html__( 'Padding', 'toolkit-for-elementor-by-beere' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+                'selectors' => [
+                    '{{WRAPPER}}' => '--sections-padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Style Section: Typography
+        $this->start_controls_section(
+            'section_checkout_style_typography',
+            [
+                'label' => esc_html__( 'Typography', 'toolkit-for-elementor-by-beere' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'sections_titles_heading',
+            [
+                'label' => esc_html__( 'Titles', 'toolkit-for-elementor-by-beere' ),
                 'type' => \Elementor\Controls_Manager::HEADING,
+            ]
+        );
+
+        $this->add_control(
+            'sections_title_color',
+            [
+                'label' => esc_html__( 'Color', 'toolkit-for-elementor-by-beere' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}}' => '--sections-title-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'sections_titles_typography',
+                'selector' => $this->get_main_woocommerce_sections_title_selectors(),
+            ]
+        );
+
+        $this->end_controls_section();
+
+        // Quantity Style Section
+        $this->start_controls_section(
+            'section_quantity_style',
+            [
+                'label' => esc_html__( 'Quantity Styling', 'toolkit-for-elementor-by-beere' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'enable_quantity' => 'yes',
+                ],
             ]
         );
 
@@ -116,26 +219,6 @@ class Toolkit_Beere_Custom_Checkout_Widget extends \Elementor\Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .quantity input.qty' => 'width: {{SIZE}}{{UNIT}} !important;',
                 ],
-            ]
-        );
-
-        $this->add_control(
-            'qty_input_bg_color',
-            [
-                'label' => esc_html__( 'Input Background', 'toolkit-for-elementor-by-beere' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .quantity input.qty' => 'background-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'qty_buttons_heading',
-            [
-                'label' => esc_html__( 'Buttons Styling', 'toolkit-for-elementor-by-beere' ),
-                'type' => \Elementor\Controls_Manager::HEADING,
-                'separator' => 'before',
             ]
         );
 
@@ -161,27 +244,15 @@ class Toolkit_Beere_Custom_Checkout_Widget extends \Elementor\Widget_Base {
             ]
         );
 
-        $this->add_group_control(
-            \Elementor\Group_Control_Border::get_type(),
-            [
-                'name' => 'qty_button_border',
-                'selector' => '{{WRAPPER}} .quantity .button, {{WRAPPER}} .quantity input.qty',
-            ]
-        );
-
-        $this->add_responsive_control(
-            'qty_button_padding',
-            [
-                'label' => esc_html__( 'Padding', 'toolkit-for-elementor-by-beere' ),
-                'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
-                'selectors' => [
-                    '{{WRAPPER}} .quantity .button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
         $this->end_controls_section();
+    }
+
+    private function get_main_woocommerce_sections_selectors() {
+        return '{{WRAPPER}} .woocommerce-checkout #customer_details .col-1, {{WRAPPER}} .woocommerce-checkout #customer_details .col-2, {{WRAPPER}} .woocommerce-additional-fields, {{WRAPPER}} .e-checkout__order_review, {{WRAPPER}} .woocommerce-checkout #payment';
+    }
+
+    private function get_main_woocommerce_sections_title_selectors() {
+        return '{{WRAPPER}} h3#order_review_heading, {{WRAPPER}} .woocommerce-billing-fields h3, {{WRAPPER}} .woocommerce-shipping-fields h3, {{WRAPPER}} .woocommerce-additional-fields h3';
     }
 
     protected function render() {
@@ -211,59 +282,54 @@ class Toolkit_Beere_Custom_Checkout_Widget extends \Elementor\Widget_Base {
         }
 
         ?>
-        <style>
-            .custom-checkout-sections .quantity {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-            }
-            .custom-checkout-sections .quantity input.qty {
-                text-align: center;
-                padding: 5px;
-            }
-        </style>
-        <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
-            
-            <?php if ( $checkout->get_checkout_fields() ) : ?>
-                <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+        <div class="elementor-checkout-wrapper">
+            <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
                 
-                <div class="custom-checkout-sections">
-                    <?php
-                    foreach ( $settings['sections_order'] as $section ) {
-                        echo '<div class="checkout-section-wrapper checkout-section-' . esc_attr( $section['section_id'] ) . '">';
-                        switch ( $section['section_id'] ) {
-                            case 'billing':
-                                do_action( 'woocommerce_checkout_billing' );
-                                break;
-                            case 'shipping':
-                                do_action( 'woocommerce_checkout_shipping' );
-                                break;
-                            case 'additional':
-                                do_action( 'woocommerce_checkout_after_customer_details' );
-                                break;
-                            case 'order_review':
-                                ?>
-                                <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'toolkit-for-elementor-by-beere' ); ?></h3>
-                                <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-                                <div id="order_review" class="woocommerce-checkout-review-order">
-                                    <?php do_action( 'woocommerce_checkout_order_review' ); ?>
-                                </div>
-                                <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-                                <?php
-                                break;
-                        }
-                        echo '</div>';
-                    }
-                    ?>
-                </div>
-            <?php endif; ?>
+                <?php if ( $checkout->get_checkout_fields() ) : ?>
+                    <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+                    
+                    <div id="customer_details" class="col2-set">
+                        <div class="custom-checkout-sections">
+                            <?php
+                            foreach ( $settings['sections_order'] as $section ) {
+                                switch ( $section['section_id'] ) {
+                                    case 'billing':
+                                        echo '<div class="col-1">';
+                                        do_action( 'woocommerce_checkout_billing' );
+                                        echo '</div>';
+                                        break;
+                                    case 'shipping':
+                                        echo '<div class="col-2">';
+                                        do_action( 'woocommerce_checkout_shipping' );
+                                        echo '</div>';
+                                        break;
+                                    case 'additional':
+                                        echo '<div class="woocommerce-additional-fields">';
+                                        do_action( 'woocommerce_checkout_after_customer_details' );
+                                        echo '</div>';
+                                        break;
+                                    case 'order_review':
+                                        echo '<div class="e-checkout__order_review">';
+                                        ?>
+                                        <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'toolkit-for-elementor-by-beere' ); ?></h3>
+                                        <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+                                        <div id="order_review" class="woocommerce-checkout-review-order">
+                                            <?php do_action( 'woocommerce_checkout_order_review' ); ?>
+                                        </div>
+                                        <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+                                        <?php
+                                        echo '</div>';
+                                        break;
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
 
-        </form>
+            </form>
+        </div>
         <?php
-
-        if ( $settings['enable_quantity'] === 'yes' ) {
-            // Script is added to wp_footer
-        }
     }
 
     private function add_quantity_hooks() {
