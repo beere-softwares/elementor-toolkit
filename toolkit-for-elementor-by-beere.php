@@ -227,7 +227,7 @@ final class Toolkit_For_Elementor_Plugin {
         require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/video-background-widget.php' );
         $widgets_manager->register( new \Toolkit_Beere_Video_Background_Widget() );
 
-        require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/custom-checkout-widget.php' );
+        require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/checkout-custom.php' );
         $widgets_manager->register( new \Toolkit_Beere_Custom_Checkout_Widget() );
     }
 
