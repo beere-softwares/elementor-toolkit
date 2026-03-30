@@ -219,16 +219,16 @@ final class Toolkit_For_Elementor_Plugin {
      */
     public function register_widgets( $widgets_manager ) {
         require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/logout-widget.php' );
-        $widgets_manager->register( new \Elementor_Logout_Widget() );
+        $widgets_manager->register( new \Toolkit_Beere_Logout_Widget() );
 
         require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/typing-animation-widget.php' );
-        $widgets_manager->register( new \Elementor_Typing_Animation_Widget() );
+        $widgets_manager->register( new \Toolkit_Beere_Typing_Animation_Widget() );
 
         require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/video-background-widget.php' );
-        $widgets_manager->register( new \Elementor_Video_Background_Widget() );
+        $widgets_manager->register( new \Toolkit_Beere_Video_Background_Widget() );
 
         require_once( TOOLKIT_FOR_ELEMENTOR_PLUGIN_PATH . 'widgets/custom-checkout-widget.php' );
-        $widgets_manager->register( new \Elementor_Custom_Checkout_Widget() );
+        $widgets_manager->register( new \Toolkit_Beere_Custom_Checkout_Widget() );
     }
 
     /**

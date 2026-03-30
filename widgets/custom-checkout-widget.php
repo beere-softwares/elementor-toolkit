@@ -4,10 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Custom Checkout Widget for Elementor.
+ * Toolkit Beere Custom Checkout Widget for Elementor.
  * This widget allows rearranging sections and editing quantities.
  */
-class Elementor_Custom_Checkout_Widget extends \Elementor\Widget_Base {
+class Toolkit_Beere_Custom_Checkout_Widget extends \Elementor\Widget_Base {
 
     public function get_name() {
         return 'custom-checkout-widget';

@@ -4,13 +4,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Elementor Video Background Widget.
+ * Toolkit Beere Video Background Widget.
  *
  * Elementor widget that displays a video background.
  *
  * @since 1.2.0
  */
-class Elementor_Video_Background_Widget extends \Elementor\Widget_Base {
+class Toolkit_Beere_Video_Background_Widget extends \Elementor\Widget_Base {
 
     /**
      * Get widget name.

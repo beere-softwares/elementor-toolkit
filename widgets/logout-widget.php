@@ -4,13 +4,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Elementor Logout Widget.
+ * Toolkit Beere Logout Widget.
  *
  * Elementor widget that displays a logout button.
  *
  * @since 1.0.0
  */
-class Elementor_Logout_Widget extends \Elementor\Widget_Base {
+class Toolkit_Beere_Logout_Widget extends \Elementor\Widget_Base {
 
     /**
      * Get widget name.

@@ -4,13 +4,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Elementor Typing Animation Widget.
+ * Toolkit Beere Typing Animation Widget.
  *
  * Elementor widget that displays a typing animation.
  *
  * @since 1.1.0
  */
-class Elementor_Typing_Animation_Widget extends \Elementor\Widget_Base {
+class Toolkit_Beere_Typing_Animation_Widget extends \Elementor\Widget_Base {
 
     /**
      * Get widget name.
